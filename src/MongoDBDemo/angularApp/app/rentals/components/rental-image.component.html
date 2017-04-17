@@ -1,0 +1,22 @@
+﻿<div class="container-fluid">
+
+    <h1>Add Image</h1>
+    <div class="btn btn-success" (click)="onBack()">Back</div>
+    <div class="form-horizontal col-md-4">
+        <div *ngIf="!rental"><i>Loading...</i></div>
+        <div *ngIf="rental">
+            <div class="form-group">
+                <label for="description">Description</label>
+                <span id="description">{{rental.description}}</span>
+            </div>
+            <div class="form-group">
+                <label for="file">Image</label>
+                <input type="file" id="file" #fileInput/>
+            </div>
+            <button type="submit" class="btn btn-primary" style="float: right;" (click)="post()">Add</button>
+        </div>
+    </div>
+    <div>
+        <img [src]="image.imageHash" alt="Alternate Text" />
+    </div>
+</div>
